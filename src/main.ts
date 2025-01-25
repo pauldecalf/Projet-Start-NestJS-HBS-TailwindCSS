@@ -22,7 +22,7 @@ async function bootstrap() {
     templates: join(__dirname, '..', 'views'),
   });
 
-  await app.listen(3000);
-  console.log(`Application is running on: ${await app.getUrl()}`);
+  await app.listen(process.env.PORT);
+  console.log(`L'application est démarrée sur le port ${process.env.PORT}`);
 }
-bootstrap();
+bootstrap().then(() => console.log('Application démarrée'));
